@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixed Top Menu</title>
+<link rel="stylesheet" href="styles.css">
+<script>
+    function fetchDataFromGoogleSheet() {
+    // URL of your Google Apps Script API endpoint
+    var scriptUrl = 'https://script.google.com/macros/s/AKfycbzt6NfEfQNTvdc5p4DGaXVKvTeATehJw2h91ck-VeOiaqusc3Z3p4fQJCyhyrjtHlFs/exec';
+
+    // Make a POST request to the Google Apps Script API endpoint
+    fetch(scriptUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            action: 'getData' // Customize this based on your Google Apps Script implementation
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Log the fetched data to the console
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+}
+
+    </script>
 </head>
 <body>
-    <h1>It starts here</h1>
-    
+
+<div class="top-menu">
+  <div class="left-logo">
+    <!-- Your logo here -->
+    <img src="logo.png" alt="Logo">
+  </div>
+  <div class="center-search">
+    <!-- Your search bar here -->
+    <input type="text" placeholder="Search...">
+    <button><img src="magnifying_glass_icon.png" alt="Search"></button>
+  </div>
+  <div class="right-icons">
+    <!-- Your three icons here -->
+    <span class="icon">Icon 1</span>
+    <span class="icon">Icon 2</span>
+    <span class="icon">Icon 3</span>
+  </div>
+</div>
+
+<!-- Your content here -->
+<div class="content">
+  <!-- Your page content here -->
+  <p>This is some sample content.</p>
+  <button type="button" onclick="fetchDataFromGoogleSheet()">Try it</button>
+</div>
+
 </body>
 </html>
