@@ -6,18 +6,33 @@
 <title>Fixed Top Menu</title>
 <link rel="stylesheet" href="styles.css">
 <script src="landing.js"></script>
+<!-- styles for the category menu -->
+<style>
+
+</style>
+
 </head>
 <body>
   <div id="loading"></div>
-<div class="top-menu">
-  <div class="left-logo">
-    <!-- Your logo here -->
-    <img src="logo.png" alt="Logo">
+ <div id="overlay"></div>
+  <div id="menuContainer" ><span class="close-btn" id="closeBtn">&times;</span>
+
   </div>
+<div class="top-menu">
+  <div id="logomenu">
+  <div id="menuIconContainer">
+    <div class="menuicon"></div>
+    <div class="menuicon"></div>
+    <div class="menuicon"></div>
+  </div>
+  <div class="left-logo">
+    United Dukaan
+  </div>
+</div>
   <div class="center-search">
     <!-- Your search bar here -->
     <input type="text" placeholder="Search...">
-    <button><img src="magnifying_glass_icon.png" alt="Search"></button>
+    <button><img class="searchicon" src="./icons/search.svg"></button>
   </div>
   <div class="right-icons">
     <!-- Your three icons here -->
@@ -31,6 +46,19 @@
   <div id="categories"></div>
   <!-- Your page content here -->
 </div>
+
+
+
+<!-- for category menu -->
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>

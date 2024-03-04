@@ -2,7 +2,100 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
   }
+
+
+/* for menu */
+  .menuicon {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+  }
+  #menuIconContainer{
+    padding: 5px;
+  }
   
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#menuContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #f0f0f0;
+    color: #000000;
+    z-index: 1000;
+    overflow-y: auto;
+    padding-top: 50px;
+    padding-left:5px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+  
+
+
+
+.hide{
+  display:none;
+}
+.lc{
+  
+  padding-left:6px;
+}
+.lic{
+  display:flex;
+  justify-content: space-between;
+  background-color: rgb(231, 231, 231);
+  margin:5px 0px;
+  border-left: 5px solid rgba(141, 139, 139, 0.63) ;
+  cursor:pointer;
+}
+.mh{
+  font-size: medium;
+  font-weight: bold;
+  margin: 9px 0px;
+}
+
+.sm{
+  padding:8px;
+  font-size: xx-small;
+  cursor:pointer;
+  align-self: center;
+}
+.cc{
+  /* background-color:rgba(206, 201, 201, 0.32); */
+  
+}
+.lit{
+  padding:8px;
+}
+.dark{
+  background-color: rgba(141, 139, 139, 0.63);
+}
+.hc{
+  
+}
+
+
+/* top menu */
   .top-menu {
     position: fixed;
     top: 0;
@@ -11,42 +104,59 @@ body {
     background-color: #333;
     color: #fff;
     display: flex;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    /* justify-content: space-between; */
     align-items: center;
     padding: 10px 20px;
     box-sizing: border-box;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
-  
-  .left-logo img {
-    height: 30px; /* Adjust height as needed */
+  #logomenu{
+    display:flex;
+    flex:25%;
+  }
+  .left-logo {
+ align-self: center;
   }
   
   .center-search {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    flex:50%;
     display: flex;
+    justify-content: center;
     align-items: center;
   }
   
   .center-search input[type="text"] {
     padding: 5px 10px;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
+    width:100%;
+    height:27px;
   }
   
   .center-search button {
     background: none;
     border: none;
     cursor: pointer;
+    display:flex;
+    align-items: center;
+    
   }
   
-  .center-search button img {
-    height: 20px; /* Adjust height as needed */
-  }
+ .searchicon{
+  height:30px;
+  background-color: #ffa600;
+  border-radius: 5px;
+  padding:5px;
+  
+ }
   
   .right-icons {
     display: flex;
+    justify-content: end;
+    flex:25%;
+    
   }
   
   .icon {
@@ -127,7 +237,19 @@ body {
       width: calc(100% - 40px); /* Adjust width for smaller screens */
      
     }
-
+   
+.logomenu{
+  flex:50%;
+  order:1
+}
+.center-search{
+  flex:100%;
+  order:3;
+}
+.right-icons{
+  flex:50%;
+  order:2;
+}
     .image-container img { 
       
       width: calc(50% - 5px); /* Make images fill the container width */
